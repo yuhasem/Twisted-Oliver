@@ -16,6 +16,7 @@ public abstract class Card {
 	protected int reward;
 	protected int bounty;
 	protected String viewDescrip;
+	protected boolean isTargetlable;
 	
 	public Card(){
 		this.id = IDENTIFICATION;
@@ -26,6 +27,7 @@ public abstract class Card {
 		this.reward = 0;
 		this.bounty = 0;
 		this.viewDescrip = "The Null Card";
+		this.isTargetlable = false;
 	}
 	
 	public abstract void onPlayEffect(Field a, Field b);

@@ -204,4 +204,22 @@ public class Field {
 		}
 		return false;
 	}
+	
+	public boolean hasBattlers(){
+		for (int i = 0; i < this.inPlay.size(); i++){
+			if (this.inPlay.get(i).getType().charAt(0) == 'b'){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean hasCounters(){
+		for (int i = 0; i < this.inHand.size(); i++){
+			if (this.inHand.get(i).getType().charAt(0) == 's' && this.inHand.get(i).getType().charAt(3) == 'c'){
+				return true;
+			}
+		}
+		return false;
+	}
 }

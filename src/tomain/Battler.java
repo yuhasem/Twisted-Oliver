@@ -6,7 +6,7 @@ package tomain;
  * @author yuhasem.
  *         Created Feb 25, 2013.
  */
-public abstract class Battler extends Card {
+public abstract class Battler extends Card{
 
 	protected char type; //c for creatures, w for warriors, a for walls, l for legendaries
 	protected int speed;
@@ -25,6 +25,7 @@ public abstract class Battler extends Card {
 		this.health = 0;
 		this.type = 'w';
 		this.title = null;
+		this.isTargetlable = true;
 	}
 
 	public abstract void onAttackEffect(Card attacked, Field a, Field b);
