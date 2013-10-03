@@ -24,6 +24,7 @@ public class Wolverine extends Battler {
 		this.speed = 60;
 		this.attack = 2;
 		this.defense = 1;
+		this.health = this.defense;
 		this.type = 'c';
 		this.viewDescrip = this.name + "\n\tCost: " + this.cost + "\n\tType: Batller, Creature\n\t" +
 		"Speed: " + this.speed + "\n\tAttack/Defense: " + this.attack + "/" + this.defense + "\n\t" +

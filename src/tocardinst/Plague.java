@@ -56,13 +56,13 @@ public class Plague extends Spell {
 	@Override
 	public boolean onEnterEffect(Field a, Field b) {
 		if (a.consume(this.cost)){
-			for (int i = 0; i < a.inPlay.size(); i++){
+			for (int i = a.inPlay.size() - 1; i >= 0; i--){
 				if (a.inPlay.get(i).getType().charAt(0) == 'b'){
 					Battler one = (Battler) a.inPlay.get(i);
 					one.onDefeatEffect(this, a, b);
 				}
 			}
-			for (int i = 0; i < b.inPlay.size(); i++){
+			for (int i = b.inPlay.size() - 1; i >= 0; i--){
 				if (b.inPlay.get(i).getType().charAt(0) == 'b'){
 					Battler one = (Battler) b.inPlay.get(i);
 					one.onDefeatEffect(this, b, a);
