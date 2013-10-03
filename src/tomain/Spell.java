@@ -23,6 +23,6 @@ public abstract class Spell extends Card {
 
 	@Override
 	public String getType(){
-		return "s";
+		return "s" + this.type[0] + this.type[1] + this.type[2] + this.type[3];
 	}
 }

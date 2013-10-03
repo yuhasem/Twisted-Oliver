@@ -22,6 +22,6 @@ public abstract class Item extends Card {
 	
 	@Override
 	public String getType(){
-		return "i";
+		return "i" + type;
 	}
 }

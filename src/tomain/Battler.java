@@ -88,7 +88,7 @@ public abstract class Battler extends Card{
 	
 	@Override
 	public String getType(){
-		return "b";
+		return "b" + type;
 	}
 	
 	public String getStats(){

@@ -433,6 +433,7 @@ public class Control {
 		} else if (line.equals("counter")){
 			//
 		}
+		input.close();
 		return -1;
 	}
 
