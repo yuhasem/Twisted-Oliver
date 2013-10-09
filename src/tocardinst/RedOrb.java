@@ -71,9 +71,4 @@ public class RedOrb extends Item {
 	public boolean onEquipEffect(Battler attach, Field a, Field b) {
 		return false;
 	}
-	
-	@Override
-	public String getType(){
-		return super.getType() + this.type;
-	}
 }

@@ -8,16 +8,16 @@ package tomain;
  */
 public abstract class Spell extends Card {
 
-	protected char type[] = new char[4]; //s for instant, f for infinity
+	protected char type[] = new char[4];
 	protected String title;
 	
 	public Spell() {
 		super();
 		this.name = "NULL SPELL";
-		this.type[0] = 'm';
-		this.type[1] = 'a';
-		this.type[2] = 'n';
-		this.type[3] = '1';
+		this.type[0] = 'm'; //m for mundane, l for legendary
+		this.type[1] = 'a'; //a for augment, f for field, t for targeter
+		this.type[2] = 'n'; //n for non-counter, c for counter, t for trap
+		this.type[3] = 's'; //s for instant, f for infinity
 		this.title = null;
 	}
 

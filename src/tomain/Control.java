@@ -137,9 +137,18 @@ public class Control {
 							System.out
 									.println("Invalid number: not in Play size.");
 						}
+					} else if (moving.getType().charAt(0) == 's' && moving.getType().charAt(3) == 'c') {
+						System.out.println("Professor Oak: Now's not the time to use that!");
+					} else if (moving.getType().charAt(0) == 's' && moving.getType().charAt(3) == 't') {
+						if (moving.onEnterEffect(adjacent, opposing)){
+							//Do we need to put anything here? Traps onPlayEffect doesn't spring immediately.
+							//And onEnter controls the actual moving, so it has to check if there is room.
+						} else {
+							System.out.println("Trap could not enter field."); //more specific error message in onEnterEffect.
+						}
 					} else {
 						moving.onRevealEffect(adjacent, opposing);
-						// Allow counter/trap
+						// Allow counter/trap --> this takes place in either onEnter or onPlay depending on the card.
 						if (moving.onEnterEffect(adjacent, opposing)) {
 							moving.onPlayEffect(adjacent, opposing);
 							if (moving.getType().charAt(0) == 'i'

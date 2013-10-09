@@ -16,9 +16,10 @@ public class Field {
 	public ArrayList<Card> inHand;
 	public ArrayList<Card> inDeck;
 	public ArrayList<Card> inDiscard;
+	public ArrayList<Card> inTrap;
 	private ArrayList<Character> energy;
-	private Field opposingField;
 	//R for red, O for orange, Y for yellow, G for green, B for Blue, V for violet, W for white, L for black, C for clear
+	private Field opposingField;
 	
 	public Field(Player player){
 		this.connectedPlayer = player;
@@ -26,6 +27,7 @@ public class Field {
 		this.inDiscard = new ArrayList<Card>();
 		this.inHand = new ArrayList<Card>();
 		this.inPlay = new ArrayList<Card>();
+		this.inTrap = new ArrayList<Card>();
 		this.energy = new ArrayList<Character>();
 		
 		this.inDeck = this.connectedPlayer.getDeck();
@@ -77,11 +79,18 @@ public class Field {
 						this.energy = store;
 						return false;
 					}
+					
+					
+					
 				}
 			}
 		}
 		return true;
 	}
+	
+	//TODO: You know what I should do, I should make some more functions dealing with the energy pool to facilitate future card ideas.
+	//Ideas: 	public int howMuchEnergy(char type) { Returns how much energy of type there is. If type is null (0?) it returns energy.size() }
+	//		 	public boolean canConsume(String cost) { Returns true if there is enough energy to consume cost, without consuming it. }
 	
 	public void moveFromXToY(Card toMove, ArrayList<Card> x, ArrayList<Card> y){
 		if (x.remove(toMove)){
@@ -129,7 +138,7 @@ public class Field {
 		this.energy = new ArrayList<Character>();
 	}
 	
-	//TODO: Can we get this to display battler stats, please?
+	//TODONE: Can we get this to display battler stats, please?
 	public void printState(){
 		System.out.println("-----Field State---------------------------");
 		System.out.println("Opposing Player: " + this.getOpposingField().getConnectedPlayer().toString());

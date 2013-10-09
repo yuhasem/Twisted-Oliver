@@ -8,7 +8,7 @@ package tomain;
  */
 public interface Targetable {
 
-	public void OnTargetedEffect(Field a, Field b);
+	public void onTargetedEffect(Spell targeter, Field a, Field b);
 	
-	public void OnRemoveEffect(Field a, Field b);
+	public void onRemoveEffect(Spell remover, Field a, Field b);
 }

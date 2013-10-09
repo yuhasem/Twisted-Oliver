@@ -73,10 +73,5 @@ public class YellowOrb extends Item {
 		// TODO Auto-generated method stub.
 
 	}
-	
-	@Override
-	public String getType(){
-		return super.getType() + this.type;
-	}
 
 }

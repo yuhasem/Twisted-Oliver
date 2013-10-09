@@ -68,8 +68,10 @@ public class Adreniline extends Spell {
 					Battler affected = (Battler) a.inPlay.get(toEffect);
 					affected.changeStats(30, 0, 0);
 					a.moveFromXToY(this, a.inHand, a.inDiscard);
+					read.close();
 					return true;
 				} else {
+					read.close();
 					return false;
 				}
 			} else {
@@ -78,6 +80,7 @@ public class Adreniline extends Spell {
 		} else {
 			System.out.println("Invalid Number: not in range of Play");
 		}
+		read.close();
 		return false;
 	}
 
@@ -85,10 +88,5 @@ public class Adreniline extends Spell {
 	public void inPlayEffect(Field a, Field b) {
 		// TODO Auto-generated method stub.
 
-	}
-
-	@Override
-	public String getType(){
-		return super.getType() + this.type[0] + this.type[1] + this.type[2] + this.type[3];
 	}
 }

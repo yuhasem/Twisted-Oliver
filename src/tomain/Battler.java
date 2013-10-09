@@ -6,8 +6,8 @@ package tomain;
  * @author yuhasem.
  *         Created Feb 25, 2013.
  */
-public abstract class Battler extends Card{
-
+public abstract class Battler extends Card implements Targetable{
+//Should this implements Targetable? Yes Because Targetable is how spells we determine what they can target for damage.
 	protected char type; //c for creatures, w for warriors, a for walls, l for legendaries
 	protected int speed;
 	protected int attack;
@@ -104,5 +104,15 @@ public abstract class Battler extends Card{
 		this.attack += deltaAttack;
 		this.defense += deltaDefense;
 		this.health += deltaDefense;
+	}
+	
+	@Override
+	public void onTargetedEffect(Spell targeter, Field a, Field b){
+		this.onDefenseEffect(targeter, a, b);
+	}
+	
+	@Override
+	public void onRemoveEffect(Spell remover, Field a, Field b){
+		this.onDefeatEffect(remover, a, b);
 	}
 }

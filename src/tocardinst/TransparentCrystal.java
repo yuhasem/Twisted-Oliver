@@ -78,6 +78,7 @@ public class TransparentCrystal extends Item {
 			a.provide("2C");
 			a.moveFromXToY(this, a.inPlay, a.inDiscard);
 		}
+		read.close();
 	}
 
 	@Override
@@ -94,10 +95,5 @@ public class TransparentCrystal extends Item {
 	public void inPlayEffect(Field a, Field b) {
 		// TODO Auto-generated method stub.
 
-	}
-
-	@Override
-	public String getType(){
-		return super.getType() + this.type;
 	}
 }

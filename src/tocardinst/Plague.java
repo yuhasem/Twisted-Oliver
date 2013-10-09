@@ -79,9 +79,4 @@ public class Plague extends Spell {
 		// TODO Auto-generated method stub.
 
 	}
-
-	@Override
-	public String getType(){
-		return super.getType() + this.type[0] + this.type[1] + this.type[2] + this.type[3];
-	}
 }
